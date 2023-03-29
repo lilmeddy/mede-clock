@@ -1,3 +1,196 @@
-body{
-    background-color:red;
+* {
+    top: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    /* animation: nums 2s linear infinite; */
+}
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+   background-color: red;
+   border-radius: 50%;
+   z-index: 5;
+   box-shadow: 0 0 0 1px red, 
+   0 0 0 3px #fff, 
+   0 0 5px 5px rgba(0,0,0,0.15);
+}
+.clock {
+    width: 300px;
+    height: 300px;
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    box-shadow: 30px 30px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+.nums {
+    position: absolute;
+    inset: 35px;
+    border-radius: 50%;
+    background-color: #222;
+    box-shadow: 5px 5px 15px #333;
+
+}
+
+.num{
+   font-weight: 800;
+    position: absolute;
+    inset: 5px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.25em;
+    --rotation: 0;
+    transform: rotate(var(--rotation));
+ }
+ .one{
+    --rotation:30deg; 
+ }
+ .one div{
+    /* background-color: fuchsia; */
+    transform: rotate(-30deg);
+ }
+ .two{
+     --rotation:60deg;   
+ }
+ .two div{
+    /* background-color: fuchsia; */
+    transform: rotate(-60deg);
+ }
+ .three{
+     --rotation:90deg; 
+ }
+ .three div{
+    /* background-color: fuchsia; */
+    transform: rotate(-90deg);
+ }
+ .four{
+     --rotation:120deg; 
+ }
+ .four div{
+    /* background-color: fuchsia; */
+    transform: rotate(-120deg);
+ }
+ .five{
+     --rotation:150deg; 
+ }
+ .five div{
+    /* background-color: fuchsia; */
+    transform: rotate(-150deg);
+ }
+ .six{
+     --rotation:180deg; 
+ }
+ .six div{
+    /* background-color: fuchsia; */
+    transform: rotate(-180deg);
+ }
+ .seven{
+     --rotation:210deg; 
+ }
+ .seven div{
+    /* background-color: fuchsia; */
+    transform: rotate(-210deg);
+ }
+ .eight{
+     --rotation:240deg; 
+ }
+ .eight div{
+    /* background-color: fuchsia; */
+    transform: rotate(-240deg);
+ }
+ .nine{
+     --rotation:270deg; 
+ }
+ .nine div{
+    /* background-color: fuchsia; */
+    transform: rotate(-270deg);
+ }
+ .ten{
+     --rotation:300deg; 
+ }
+ .ten div{
+    /* background-color: fuchsia; */
+    transform: rotate(-300deg);
+ }
+ .oneth{
+     --rotation:330deg; 
+ }
+ .oneth div{
+    /* background-color: fuchsia; */
+    transform: rotate(-330deg);
+ }
+ .twoth{
+     --rotation:360deg;
+ }
+ .nums::before{
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  inset: 35px;
+  background: linear-gradient(blue,red,green,yellow);
+  animation: nums 2s linear infinite;
+ }
+ @keyframes nums{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+    
+ }
+ .nums::after{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    inset: 37px;
+    background: #222;
+   }
+
+   .circle {
+    position: absolute;
+    inset: 0;
+    top:5px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+   }
+
+   .circle i {
+    position: absolute;
+    width: 3px;
+    height: 100px;
+    background-color: #fff;
+    transform-origin: bottom;
+   }
+   .circle#hr i {
+    transform: scaleY(0.3);
+    height: 50%;
+    width: 4px;
+   }
+   .circle#mn i {
+    height: 53%;
+    transform: scaleY(0.50);
+   
+   }
+   .circle#sc i {
+    transform: scaleY(0.55);
+    width: 2px;
+    background-color: red;
+    box-shadow: 0 30px 0 red;
+   }
